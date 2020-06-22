@@ -7,6 +7,7 @@ import ru.javamentor.ecommerce.dao.abstracts.ReadWriteDao;
 import javax.persistence.PersistenceContext;
 import javax.persistence.EntityManager;
 
+import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 @Repository
@@ -14,7 +15,17 @@ public abstract class ReadWriteDaoImpl<T, PK> implements ReadWriteDao<T, PK> {
     private Class<T> clazz;
 
     @PersistenceContext
-    protected EntityManager entityManager;
+    protected EntityManager entityManager; // all classes which extends this class, will have an access
+
+    @SuppressWarnings("unchecked")
+    public ReadWriteDaoImpl() {
+        this.clazz = (Class<T>) ((ParameterizedType) getClass()
+                .getGenericSuperclass())
+                .getActualTypeArguments()[0];
+
+        // getting the generic of superclass
+        // multiple Qualifer
+    }
 
     @Override
     @Transactional

@@ -9,7 +9,7 @@ import ru.javamentor.ecommerce.service.abstracts.ReadWriteService;
 import java.util.List;
 
 @Service
-public class ReadWriteServiceImpl<T, PK> implements ReadWriteService<T, PK> {
+public abstract class ReadWriteServiceImpl<T, PK> implements ReadWriteService<T, PK> {
     private final ReadWriteDao<T, PK> readWriteDao;
 
     @Autowired
