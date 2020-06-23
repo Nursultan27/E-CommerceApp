@@ -1,10 +1,10 @@
-package ru.javamentor.ecommerce.service.impl;
+package ru.javamentor.ecommerce.service.impl.modelImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.javamentor.ecommerce.dao.abstracts.ReadWriteDao;
-import ru.javamentor.ecommerce.service.abstracts.ReadWriteService;
+import ru.javamentor.ecommerce.dao.abstracts.modelDao.ReadWriteDao;
+import ru.javamentor.ecommerce.service.abstracts.modelService.ReadWriteService;
 
 import java.util.List;
 

@@ -10,7 +10,7 @@ import java.sql.Blob;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-//@Builder
+@Builder
 @Table(name = "users")
 public class User {
 

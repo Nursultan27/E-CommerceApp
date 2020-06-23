@@ -1,4 +1,4 @@
-package ru.javamentor.ecommerce.dao.abstracts;
+package ru.javamentor.ecommerce.dao.abstracts.modelDao;
 
 import java.util.List;
 

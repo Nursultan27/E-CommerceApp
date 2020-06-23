@@ -1,9 +1,9 @@
-package ru.javamentor.ecommerce.service.impl;
+package ru.javamentor.ecommerce.service.impl.modelImpl;
 
 import org.springframework.stereotype.Service;
-import ru.javamentor.ecommerce.dao.abstracts.UserDao;
+import ru.javamentor.ecommerce.dao.abstracts.modelDao.UserDao;
 import ru.javamentor.ecommerce.models.entities.User;
-import ru.javamentor.ecommerce.service.abstracts.UserService;
+import ru.javamentor.ecommerce.service.abstracts.modelService.UserService;
 
 @Service
 public class UserServiceImpl extends ReadWriteServiceImpl<User, Long> implements UserService {

@@ -1,4 +1,4 @@
-package ru.javamentor.ecommerce.service.abstracts;
+package ru.javamentor.ecommerce.service.abstracts.modelService;
 
 import java.util.List;
 

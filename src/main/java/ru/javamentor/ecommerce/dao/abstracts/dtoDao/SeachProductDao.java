@@ -1,8 +1,4 @@
-package ru.javamentor.ecommerce.dao.abstracts.dto;
-
-import ru.javamentor.ecommerce.models.entities.Product;
-
-import java.util.List;
+package ru.javamentor.ecommerce.dao.abstracts.dtoDao;
 
 public interface SeachProductDao {
 

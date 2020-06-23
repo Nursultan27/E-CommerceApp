@@ -1,7 +1,7 @@
-package ru.javamentor.ecommerce.dao.impl;
+package ru.javamentor.ecommerce.dao.impl.modelImpl;
 
 import org.springframework.stereotype.Repository;
-import ru.javamentor.ecommerce.dao.abstracts.ProductCategoryDao;
+import ru.javamentor.ecommerce.dao.abstracts.modelDao.ProductCategoryDao;
 import ru.javamentor.ecommerce.models.entities.ProductCategory;
 
 @Repository

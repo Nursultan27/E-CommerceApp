@@ -1,8 +1,8 @@
-package ru.javamentor.ecommerce.dao.impl;
+package ru.javamentor.ecommerce.dao.impl.modelImpl;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import ru.javamentor.ecommerce.dao.abstracts.ReadWriteDao;
+import ru.javamentor.ecommerce.dao.abstracts.modelDao.ReadWriteDao;
 
 import javax.persistence.PersistenceContext;
 import javax.persistence.EntityManager;
