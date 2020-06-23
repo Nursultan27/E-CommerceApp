@@ -6,19 +6,23 @@ $(document).ready(function () {
         success: function (listOfBooks) {
             let bookData = '';
             $.each(listOfBooks, function (i, book) {
-                bookData += ('<a href="product-detail.html">');
-                bookData += ('<img src=/images/books/' + book.imageURL + 'class="img-responsive">');
-                bookData += ('</a>');
-                bookData += ('<a href="product-detail.html">');
-                bookData += ('<h1>' + book.name + '</h1>');
-                bookData += ('</a>');
-                // bookData += ('<h2>' + book.description + '</h2>');
-                
-                bookData += ('<div class="price">' + book.unitPrice +'</div>');
-                bookData += ('<a href="#" class="primary-btn">Add to cart</a>\n');
-                bookData += ('');
-
-                $('.product-box').html(bookData);
+                let output =
+                    '<div class="card m-2" style="width: 15rem;">' +
+                        '<img src="/images/books/' + book.imageUrl + '" class="img-fluid" style="width: 13rem; height: auto; align-self: center;" class="card-img-top" alt="*">' +
+                        '<div class="card-body text-center">' +
+                            '<h5 class="card-title">' + book.name + '</h5>' +
+                        '</div>' +
+                        '<div class="card-body">' +
+                            book.description +
+                        '</div>' +
+                        '<div class="card-footer">' +
+                            '<div class="d-flex flex-row justify-content-between align-items-center">' +
+                                '<div class="price m-0">' + book.unitPrice +'</div>' +
+                                '<a href="#" class="primary-btn">Add to cart</a>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>';
+                $('.product-box').append(output);
 
             });
 
