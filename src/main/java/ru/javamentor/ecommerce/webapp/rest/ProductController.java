@@ -2,6 +2,8 @@ package ru.javamentor.ecommerce.webapp.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.javamentor.ecommerce.models.dto.ProductDto;
@@ -20,7 +22,7 @@ public class ProductController {
 
 
     @GetMapping("/api/books")
-    public List<ProductDto> getAllBooks() {
-        return productDtoService.getAllBooksDto();
+    public ResponseEntity<List<ProductDto>> getAllBooks() {
+        return new ResponseEntity<>(productDtoService.getAllBooksDto(), HttpStatus.OK);
     }
 }

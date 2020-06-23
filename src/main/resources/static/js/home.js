@@ -13,6 +13,7 @@ $(document).ready(function () {
                 bookData += ('<h1>' + book.name + '</h1>');
                 bookData += ('</a>');
                 // bookData += ('<h2>' + book.description + '</h2>');
+                
                 bookData += ('<div class="price">' + book.unitPrice +'</div>');
                 bookData += ('<a href="#" class="primary-btn">Add to cart</a>\n');
                 bookData += ('');
