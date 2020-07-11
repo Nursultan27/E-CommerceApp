@@ -20,9 +20,16 @@ public class ProductDtoServiceImpl implements ProductDtoService {
 
     @Override
     @Transactional
-    public List<ProductDto> getAllBooksDto() {
-        return productDtoDao.getAllBooksDto();
+    public List<ProductDto> getAllBooksDto(int page, int size) {
+        return productDtoDao.getAllBooksDto(page, size);
     }
+
+    @Override
+    @Transactional
+    public Long getAmountOfPagesForBooks() {
+        return productDtoDao.getAmountOfPagesForBooks();
+    }
+
 
     @Override
     @Transactional

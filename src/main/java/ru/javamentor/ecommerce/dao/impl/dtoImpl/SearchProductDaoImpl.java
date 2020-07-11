@@ -3,7 +3,7 @@ package ru.javamentor.ecommerce.dao.impl.dtoImpl;
 import org.hibernate.query.Query;
 import org.hibernate.transform.ResultTransformer;
 import org.springframework.stereotype.Repository;
-import ru.javamentor.ecommerce.dao.abstracts.dtoDao.ProductDtoDao;
+import ru.javamentor.ecommerce.dao.abstracts.dtoDao.SearchProductDao;
 import ru.javamentor.ecommerce.dao.impl.modelImpl.ReadWriteDaoImpl;
 import ru.javamentor.ecommerce.models.dto.ProductDto;
 
@@ -11,20 +11,24 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Repository
-public class ProductDtoDaoImpl extends ReadWriteDaoImpl<ProductDto, Long> implements ProductDtoDao {
+public class SearchProductDaoImpl extends ReadWriteDaoImpl<ProductDto, Long> implements SearchProductDao {
+    @Override
+    public List<ProductDto> getProductsSortedByСategory(Integer category_id) {
+        return null;
+    }
 
     @Override
     @SuppressWarnings({"unchecked", "deprecated"})
-    public List<ProductDto> getAllBooksDto(int page, int size) {
+    public List<ProductDto> search(String text) {
         return entityManager.createQuery("SELECT " +
                 "p.id, " +
                 "p.name, " +
                 "p.description, " +
                 "p.unitPrice, " +
                 "p.imageUrl " +
-                "FROM Product p WHERE p.category = 1")
-                .setFirstResult((page-1) * size)
-                .setMaxResults(size)
+//                "FROM Product p WHERE p.name LIKE '%' :t '%'")
+                "FROM Product p WHERE p.name LIKE CONCAT('%', :t, '%')")
+                .setParameter("t", text)
                 .unwrap(Query.class)
                 .setResultTransformer(new ResultTransformer() {
                     @Override
@@ -44,28 +48,5 @@ public class ProductDtoDaoImpl extends ReadWriteDaoImpl<ProductDto, Long> implem
                     }
                 })
                 .getResultList();
-    }
-
-    @Override
-    public Long getAmountOfPagesForBooks() {
-        return entityManager.createQuery("SELECT count(p.id) " +
-                "FROM Product p " +
-                "WHERE p.category = 1", Long.class)
-                .getSingleResult();
-    }
-
-    @Override
-    public List<ProductDto> getAllCoffeeMugsDto() {
-        return null;
-    }
-
-    @Override
-    public List<ProductDto> getAllMousePadsDto() {
-        return null;
-    }
-
-    @Override
-    public List<ProductDto> getAllLuggageTagsDto() {
-        return null;
     }
 }

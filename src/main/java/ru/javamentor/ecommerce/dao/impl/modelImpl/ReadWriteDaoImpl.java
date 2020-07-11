@@ -15,7 +15,8 @@ public abstract class ReadWriteDaoImpl<T, PK> implements ReadWriteDao<T, PK> {
     private Class<T> clazz;
 
     @PersistenceContext
-    protected EntityManager entityManager; // all classes which extends this class, will have an access
+    // all classes which extends this class, will have an access to this field
+    protected EntityManager entityManager;
 
     @SuppressWarnings("unchecked")
     public ReadWriteDaoImpl() {

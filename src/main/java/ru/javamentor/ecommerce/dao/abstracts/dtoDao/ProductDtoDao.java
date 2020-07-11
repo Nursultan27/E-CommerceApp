@@ -5,7 +5,9 @@ import ru.javamentor.ecommerce.models.dto.ProductDto;
 import java.util.List;
 
 public interface ProductDtoDao {
-    List<ProductDto> getAllBooksDto();
+    List<ProductDto> getAllBooksDto(int page, int size);
+
+    Long getAmountOfPagesForBooks();
 
     List<ProductDto> getAllCoffeeMugsDto();
 

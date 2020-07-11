@@ -1,4 +1,4 @@
-package ru.javamentor.ecommerce.webapp;
+package ru.javamentor.ecommerce.webapp.controllers.viewController;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,4 +10,5 @@ public class Home {
     public String getHomePage() {
         return "home";
     }
+
 }
