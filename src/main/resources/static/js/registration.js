@@ -1,18 +1,17 @@
 $(document).ready(function () {
     $('#registrationButton').on('click', function (event) {
         event.preventDefault();
-        registrOfNewUser();
+        registerNewUser();
     })
 });
 
-function registrOfNewUser() {
+function registerNewUser() {
     $('#registrationButton').on('click', function (event) {
         event.preventDefault();
 
         let registrationForm = {
-            id: $('#addingId').val(),
             firstName: $('#firstName').val(),
-            secondName: $('#lastName').val(),
+            lastName: $('#lastName').val(),
             email: $('#username').val(),
             password: $('#password').val(),
             // passwordConfirmation: $('#passwordConfirmation').val()
@@ -21,11 +20,12 @@ function registrOfNewUser() {
         $.ajax({
             url: '/api/registration',
             type: 'POST',
-            data: JSON.stringify(registrationForm),
             contentType: "application/json",
+            data: JSON.stringify(registrationForm),
+
             success: function () {
                 window.location.replace("/login");
-                alert('User has been registred successfully');
+                alert('User has been registered successfully');
             },
             error: function () {
                 alert('Registration Error');

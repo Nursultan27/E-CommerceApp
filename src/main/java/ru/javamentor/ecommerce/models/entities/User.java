@@ -19,35 +19,22 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    /*@Column(name = "first_name", length = 50)
+    @Column(name = "first_name", length = 50)
     private String firstName;
 
     @Column(name = "last_name", length = 50)
     private String lastName;
 
-    @Column(name = "age")
-    private int age;*/
+//    @Column(name = "age")
+//    private int age;
 
-    @Column(name = "email", length = 100, unique = true)
+    @Column(name = "email", length = 100)
     private String email;
 
     @Column(name = "password")
     private String password;
 
-//    private transient String passwordConfirmation;
-
-//    private Set<? extends GrantedAuthority> grantedAuthorities;
-
-    /*@Column(name = "isAccountNonExpired")
-    private boolean isAccountNonExpired = true;
-
-    @Column(name = "isAccountNonLocked")
-    private boolean isAccountNonLocked = true;
-
-    @Column(name = "isCredentialsNonExpired")
-    private boolean isCredentialsNonExpired = true;*/
-
-    @Column(name = "isEnabled")
+    @Column(name = "is_enabled")
     private boolean isEnabled;
 
     @Override

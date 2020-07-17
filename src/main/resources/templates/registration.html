@@ -17,7 +17,7 @@
     </style>
 </head>
 <body>
-<div class="container">
+<p class="container">
     <form class="form-signin" method="post" action="/login">
         <h2 class="form-signin-heading">Registration</h2>
         <p>
@@ -31,7 +31,7 @@
         </p>
         <p>
             <label for="username" class="sr-only">Username</label>
-            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required=""
+            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required="">
         </p>
         <p>
             <label for="password" class="sr-only">Password</label>
@@ -43,6 +43,10 @@
             <input type="password" id="passwordConfirmation" name="passwordConfirmation" class="form-control" placeholder="Password confirmation"
                    required="">
         </p>-->
+
+        <p>
+            <div class="g-recaptcha" data-sitekey="6Ldsu3UUAAAAAJ5CW4H9w5RrDX0vC7bGh7bVp6fN"></div>
+        </p>
 
         <input name="_csrf" type="hidden" value="07e3d46d-9446-484b-a05f-968d47162951">
         <button class="btn btn-lg btn-primary btn-block" id="registrationButton" type="submit">Sign up</button>
@@ -60,6 +64,7 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
 <script src="/js/registration.js"></script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
 
 </body>
 </html>

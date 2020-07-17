@@ -5,5 +5,7 @@ import ru.javamentor.ecommerce.models.entities.User;
 import java.util.Optional;
 
 public interface UserDao extends ReadWriteDao<User, Long> {
-    Optional<User> findUserByEmail(String email);
+//    Optional<User> findUserByEmail(String email);
+
+    User findUserByEmail(String email);
 }

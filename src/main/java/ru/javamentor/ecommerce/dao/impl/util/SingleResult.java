@@ -5,7 +5,7 @@ import java.util.Optional;
 
 public class SingleResult {
 
-    public static <T> Optional<T> getSingleResult(TypedQuery<T> var) {
+    public static <T> Optional<T> getSingleResultOrNull(TypedQuery<T> var) {
         try {
             return Optional.of(var.getSingleResult());
         } catch (Exception e) {
